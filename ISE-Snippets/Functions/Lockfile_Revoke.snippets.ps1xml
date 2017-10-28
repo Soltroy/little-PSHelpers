@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>Lockfile [Revoke]</Title>
+                <Description>
+Revoke-Lockfile [-FileStream] &lt;FileStream&gt; [&lt;CommonParameters&gt;]
+</Description>
+                <Author>SolTroy</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[FUNCTION Revoke-Lockfile {
+  <#
+   <#
+      .SYNOPSIS
+      Closes the filestream from the lock-file an deletes the file.
+      .NOTES
+      SolTroys little PSHelpers
+      .LINK
+      https://github.com/Soltroy/little-PSHelpers
+  #>
+  param(
+    [Parameter(Mandatory = $TRUE, Position = 0)]
+    [System.IO.FileStream]$FileStream
+  )
+  $FileStream.Close()
+  Remove-Item -Path $FileStream.Name -Force
+}]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+
