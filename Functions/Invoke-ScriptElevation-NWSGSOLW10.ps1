@@ -3,15 +3,14 @@
   <#
       .SYNOPSIS
       Elevates the current running script to run with Administrator privileges.
-
       .DESCRIPTION
       This Function must be used within a Script. When the Function is called it restarts the Script in an elevated Powershell Session.
       Therefore the Function should be used at the beginning of the Script.
-
       .NOTES
-      This only works when called within a Powershell Script.
+      SolTroys little PSHelpers
+      .LINK
+      https://github.com/Soltroy/little-PSHelpers
   #>
-
 
   $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')
   IF (!$isAdmin)  

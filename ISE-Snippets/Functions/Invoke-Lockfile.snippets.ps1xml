@@ -2,8 +2,8 @@
     <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
         <Snippet Version='1.0.0'>
             <Header>
-                <Title>Timestamp Variable</Title>
-                <Description>creates a Timestamp Variable</Description>
+                <Title>Invoke/Revoke-Lockfile</Title>
+                <Description>FUnctions for Invoking and Revoking a Lockfile</Description>
                 <Shortcut></Shortcut> 
                 <Keywords>editor,console</Keywords>
                 <Author>Oliver Soswinski</Author>
@@ -21,8 +21,28 @@
             </Header>
 
             <Code>
-                <Script Language='PowerShell' CaretOffset='47'>
-                    <![CDATA[$timestamp = Get-Date -Format 'yyyyMMdd_HHmmss']]>
+                <Script Language='PowerShell' CaretOffset='520'>
+                    <![CDATA[FUNCTION Invoke-Lockfile{
+  param(
+    [Parameter(Mandatory = $TRUE, Position = 0)]
+    [string]$Path
+  )
+  $file = Join-Path -Path $Path -ChildPath '.pslock'
+  $mode = "OpenOrCreate"
+  $access = "Read"
+  $share = "None"
+  $output = [System.IO.File]::Open($file, $mode, $access, $share)
+  RETURN $output
+}
+
+FUNCTION Revoke-Lockfile{
+  param(
+    [Parameter(Mandatory = $TRUE, Position = 0)]
+    [System.IO.FileStream]$FileStream
+  )
+  $FileStream.Close()
+  Remove-Item -Path $FileStream.Name -Force
+}]]>
                 </Script>
             </Code>
 

@@ -1,4 +1,28 @@
-﻿FUNCTION Invoke-ScriptElevation
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>Invoke-ScriptElevation</Title>
+                <Description></Description>
+                <Shortcut></Shortcut> 
+                <Keywords>editor,console</Keywords>
+                <Author></Author>
+                <DifficultyLevel>1</DifficultyLevel>
+                <Example>False</Example>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+                <Requirements>
+                    <MinimumPowerShellVersion>1</MinimumPowerShellVersion>
+                    <RequiredModules></RequiredModules>
+                    <AdminPrivileges>False</AdminPrivileges>
+                    <ProcessorArchitecture>x64</ProcessorArchitecture>
+                </Requirements>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='1394'>
+                    <![CDATA[FUNCTION Invoke-ScriptElevation
 {
   <#
       .SYNOPSIS
@@ -41,4 +65,9 @@
       RETURN
     }
   }
-}
+}]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>

@@ -138,8 +138,8 @@
     $null = [System.Runtime.Interopservices.Marshal]::ReleaseComObject($WindowsInstaller)
     $null = [System.GC]::Collect()
     Write-Verbose -Message '</END>'
-    Write-Verbose -Message ('Total Process Count  : {0}' -f $funcProcCounter)
-    Write-Verbose -Message (' Process OK Count    : {0}' -f $funcProcOKCounter)
-    Write-Verbose -Message (' Process Error Count : {0}' -f $funcErrorCounter)
+    Write-Verbose -Message ('Total Process Count : {0}' -f $funcProcCounter)
+    Write-Verbose -Message ('         Successful : {0}' -f $funcProcOKCounter)
+    Write-Verbose -Message ('              Error : {0}' -f $funcErrorCounter)
   }
 }
