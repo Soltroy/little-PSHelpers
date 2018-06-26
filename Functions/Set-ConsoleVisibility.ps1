@@ -105,15 +105,3 @@
   Write-Verbose -Message '</Set-ConsoleVisibility>'
   RETURN [Console.Window]::IsWindowVisible($consolePtr)
 }
-
-Set-ConsoleVisibility -hide -Verbose
-Start-Sleep -s 2
-Set-ConsoleVisibility -show -Verbose
-Start-Sleep -s 2
-Set-ConsoleVisibility -change -Verbose
-Start-Sleep -s 2
-Set-ConsoleVisibility -change -Verbose
-Start-Sleep -s 2
-Set-ConsoleVisibility -change -Verbose
-Start-Sleep -s 2
-Set-ConsoleVisibility -show -Verbose
