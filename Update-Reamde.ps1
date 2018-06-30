@@ -19,7 +19,7 @@ IF($Functions){
   ## Functions:' | Out-File @ofParams -Append
   FOREACH($Function in $Functions)
   {
-    ("{0}`n`t*{1}*" -f $Function.BaseName, 'ToDo - Get Synopsis from Function') | Out-File @ofParams -Append
+    ("{0}`n*{1}*" -f $Function.BaseName, 'ToDo - Get Synopsis from Function') | Out-File @ofParams -Append
   }
 }
 IF($Scripts){
@@ -27,7 +27,7 @@ IF($Scripts){
   ## Scripts:' | Out-File @ofParams -Append
   FOREACH($Script in $Scripts)
   {
-    ("{0}`n`t*{1}*" -f $Script.BaseName, (Get-Help -Name $Script.FullName | Select-Object -ExpandProperty 'Synopsis')) | Out-File @ofParams -Append
+    ("{0}`n*{1}*" -f $Script.BaseName, (Get-Help -Name $Script.FullName | Select-Object -ExpandProperty 'Synopsis')) | Out-File @ofParams -Append
   }
 }
 IF($Variables){
@@ -35,6 +35,6 @@ IF($Variables){
   ## Variables:' | Out-File @ofParams -Append
   FOREACH($Variable in $Variables)
   {
-    ("{0}`n`t*{1}*" -f $Variable.BaseName, (Get-Help -Name $Variable.FullName | Select-Object -ExpandProperty 'Synopsis')) | Out-File @ofParams -Append
+    ("{0}`n*{1}*" -f $Variable.BaseName, (Get-Help -Name $Variable.FullName | Select-Object -ExpandProperty 'Synopsis')) | Out-File @ofParams -Append
   }
 }
