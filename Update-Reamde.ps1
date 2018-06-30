@@ -15,21 +15,24 @@ Common used Powershell Functions, Variables, Scripts' | Out-File @ofParams
 
 
 IF($Functions){
-  "`n##Functions:" | Out-File @ofParams -Append
+  '
+  ## Functions:' | Out-File @ofParams -Append
   FOREACH($Function in $Functions)
   {
     ("{0}`n`t*{1}*" -f $Function.BaseName, 'ToDo - Get Synopsis from Function') | Out-File @ofParams -Append
   }
 }
 IF($Scripts){
-  "`n##Scripts:" | Out-File @ofParams -Append
+  '
+  ## Scripts:' | Out-File @ofParams -Append
   FOREACH($Script in $Scripts)
   {
     ("{0}`n`t*{1}*" -f $Script.BaseName, (Get-Help -Name $Script.FullName | Select-Object -ExpandProperty 'Synopsis')) | Out-File @ofParams -Append
   }
 }
 IF($Variables){
-  "`n##Variables:" | Out-File @ofParams -Append
+  '
+  ## Variables:' | Out-File @ofParams -Append
   FOREACH($Variable in $Variables)
   {
     ("{0}`n`t*{1}*" -f $Variable.BaseName, (Get-Help -Name $Variable.FullName | Select-Object -ExpandProperty 'Synopsis')) | Out-File @ofParams -Append

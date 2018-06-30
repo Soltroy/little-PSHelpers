@@ -1,7 +1,7 @@
 ﻿# little-PSHelpers
 Common used Powershell Functions, Variables, Scripts
 
-##Functions:
+  ## Functions:
 Get-ConsoleVisibility
 	*ToDo - Get Synopsis from Function*
 Get-MSIInformation
@@ -15,7 +15,7 @@ New-Password
 Set-ConsoleVisibility
 	*ToDo - Get Synopsis from Function*
 
-##Variables:
+  ## Variables:
 PSScriptRoot
 	*Sets $PSScriptRoot  variable if not available (PS2.0 combatiblity)*
 TimeStamp
